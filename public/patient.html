@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Emergency Pass & Wallpaper • Sanjeevani-ID</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .phone-mockup {
+      width: 360px;
+      margin: 0 auto;
+      background: #000;
+      border-radius: 44px;
+      padding: 14px;
+      box-shadow: 0 25px 60px -15px rgba(0,0,0,0.8), 0 0 0 10px #1E293B;
+      position: relative;
+    }
+    .phone-screen {
+      background: #090D16;
+      border-radius: 34px;
+      overflow: hidden;
+      min-height: 640px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px 18px;
+    }
+    .wallpaper-bg {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-size: cover;
+      background-position: center;
+      z-index: 1;
+      opacity: 0.85;
+      transition: all 0.4s ease;
+    }
+    .phone-content {
+      position: relative;
+      z-index: 2;
+    }
+    .qr-box {
+      background: white;
+      border-radius: 12px;
+      padding: 10px;
+      display: inline-block;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="/" class="brand-badge">
+      <div class="brand-icon">✚</div>
+      <div>
+        <div class="brand-title">SANJEEVANI-ID</div>
+        <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 600;">PATIENT PASS &amp; WALLPAPER GENERATOR</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="/er-dashboard.html" class="nav-btn accent-red"><span>🚨</span> DOCTOR HUD</a>
+      <a href="/family.html" class="nav-btn"><span>👨‍👩‍👧</span> FAMILY GUARDIAN</a>
+      <a href="/" class="nav-btn"><span>🏠</span> HOME</a>
+    </div>
+  </header>
+
+  <main class="container" style="max-width: 1100px; margin-top: 20px;">
+    
+    <!-- Profile Switcher & Simulator Bar -->
+    <div class="glass-panel" style="padding: 18px 24px; margin-bottom: 30px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+      <div>
+        <div style="font-size: 0.8rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Active Patient Identity</div>
+        <div style="display: flex; gap: 10px; margin-top: 6px;">
+          <button class="btn btn-outline" id="btn-patient-rohan" onclick="selectPatient('ROHAN-101')" style="padding: 8px 16px; font-size: 0.88rem;">
+            👤 Rohan Verma (O-, LAD Stent)
+          </button>
+          <button class="btn btn-outline" id="btn-patient-priya" onclick="selectPatient('PRIYA-202')" style="padding: 8px 16px; font-size: 0.88rem;">
+            👤 Priya Nair (B+, Asthma, T1D)
+          </button>
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <button class="btn btn-danger" onclick="simulateCrashArrival()" style="box-shadow: var(--shadow-glow-red);">
+          <span>🚨</span> Simulate Highway Crash / ER Arrival
+        </button>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 380px 1fr; gap: 36px; align-items: start;">
+      
+      <!-- Interactive Phone Mockup -->
+      <div>
+        <div class="phone-mockup">
+          <div class="phone-screen" id="phone-screen-element">
+            <div class="wallpaper-bg" id="wallpaper-bg-preview" style="background-image: linear-gradient(135deg, #1E1B4B 0%, #0F172A 50%, #020617 100%);"></div>
+            
+            <div class="phone-content" style="text-align: center; padding-top: 10px;">
+              <!-- Lock screen time -->
+              <div id="lock-time" style="font-size: 3.2rem; font-weight: 300; letter-spacing: -0.04em; color: white;">12:45</div>
+              <div id="lock-date" style="font-size: 0.85rem; color: #94A3B8; margin-top: -4px;">Monday, 26 October</div>
+
+              <!-- Glassmorphic Emergency Pass Widget -->
+              <div style="margin-top: 24px; background: rgba(15, 23, 42, 0.78); backdrop-filter: blur(14px); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 18px; padding: 16px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+                  <div style="display: flex; align-items: center; gap: 6px;">
+                    <span style="font-size: 1rem;">🛡️</span>
+                    <span style="font-size: 0.72rem; font-weight: 800; letter-spacing: 0.05em; color: var(--color-cyan);">SANJEEVANI-ID PASS</span>
+                  </div>
+                  <span class="badge badge-red" id="phone-blood-badge" style="font-size: 0.75rem; padding: 2px 8px;">O- NEGATIVE</span>
+                </div>
+
+                <div class="qr-box" style="margin-bottom: 10px;">
+                  <img id="qr-image" src="/api/qr?text=http://localhost:3000/er-dashboard.html?patientId=ROHAN-101" alt="Sanjeevani QR Code" style="width: 130px; height: 130px; display: block; border-radius: 6px;">
+                </div>
+
+                <div id="phone-patient-name" style="font-size: 1.1rem; font-weight: 700; color: white;">Rohan Verma</div>
+                <div id="phone-patient-vehicle" style="font-size: 0.75rem; color: #94A3B8; margin-top: 2px;">PB-10-AB-1234 • Ludhiana</div>
+
+                <div style="margin-top: 12px; padding: 8px; background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 8px;">
+                  <div style="font-size: 0.68rem; color: #FCA5A5; font-weight: 700;">IN CASE OF TRAUMA / UNCONSCIOUS ER:</div>
+                  <div style="font-size: 0.72rem; color: white; margin-top: 2px;">Scan with any phone camera or ER barcode scanner</div>
+                </div>
+
+                <div style="margin-top: 10px; font-size: 0.65rem; color: #64748B;">
+                  🔒 Zero private contacts exposed on lock screen. Protected by Break-Glass Protocol.
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom Swipe indicator -->
+            <div class="phone-content" style="text-align: center; margin-top: 16px;">
+              <a id="direct-scan-link" href="/er-dashboard.html?patientId=ROHAN-101" target="_blank" class="btn btn-outline" style="font-size: 0.78rem; padding: 8px 14px; width: 100%; border-radius: 20px;">
+                ⚡ Scan Into Doctor HUD ➔
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wallpaper Generator & DPI Details -->
+      <div>
+        <div class="glass-panel" style="padding: 28px; margin-bottom: 24px;">
+          <h2 style="font-size: 1.45rem; margin-bottom: 8px;">Dynamic Lock-Screen Wallpaper Generator</h2>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; margin-bottom: 20px;">
+            Even if a victim's phone has no internet, a cracked camera lens, or a locked OS, Indian first responders and 108 EMTs can scan the emergency pass composited directly onto the lock-screen wallpaper.
+          </p>
+
+          <!-- Wallpaper Style Selection -->
+          <div style="margin-bottom: 20px;">
+            <label style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 8px;">SELECT WALLPAPER PRESET:</label>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+              <button class="nav-btn" onclick="setWallpaper('neon')">🌌 Cosmic Purple</button>
+              <button class="nav-btn" onclick="setWallpaper('ocean')">🌊 Deep Marine</button>
+              <button class="nav-btn" onclick="setWallpaper('midnight')">🌑 Obsidian Dark</button>
+              <button class="nav-btn" onclick="setWallpaper('emergency')">🚨 Emergency Crimson</button>
+            </div>
+          </div>
+
+          <!-- Download Action -->
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <button class="btn btn-primary" onclick="downloadLockScreenWallpaper()">
+              <span>📥</span> Download Full-HD Lock Screen Wallpaper (PNG)
+            </button>
+            <button class="btn btn-outline" onclick="copyDirectLink()">
+              <span>📋</span> Copy Emergency URL Link
+            </button>
+          </div>
+        </div>
+
+        <!-- How It Solves DigiLocker / Apple Flaws -->
+        <div class="glass-panel" style="padding: 24px;">
+          <h3 style="font-size: 1.15rem; margin-bottom: 14px; color: var(--color-cyan);">🛡️ DPI Zero-Trust Privacy Shield</h3>
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div style="background: rgba(0,0,0,0.25); padding: 14px; border-radius: var(--radius-sm);">
+              <div style="font-size: 0.8rem; font-weight: 700; color: #F87171; margin-bottom: 4px;">❌ APPLE MEDICAL ID FLAW</div>
+              <p style="font-size: 0.82rem; color: #CBD5E1; line-height: 1.4;">
+                Exposes home addresses and phone numbers to anyone who picks up a lost phone. Thieves frequently harvest victim numbers.
+              </p>
+            </div>
+
+            <div style="background: rgba(0,0,0,0.25); padding: 14px; border-radius: var(--radius-sm);">
+              <div style="font-size: 0.8rem; font-weight: 700; color: #34D399; margin-bottom: 4px;">✅ SANJEEVANI-ID SHIELD</div>
+              <p style="font-size: 0.82rem; color: #CBD5E1; line-height: 1.4;">
+                Lock screen exposes ZERO personal phone numbers. The QR code securely pings the remote family's phone via encrypted WebSockets.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/audio.js"></script>
+  <script src="/js/socket-client.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.4/build/qrcode.min.js"></script>
+  <script src="/js/patient.js"></script>
+</body>
+</html>

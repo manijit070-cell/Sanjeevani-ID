@@ -1,0 +1,40 @@
+{
+  "name": "sanjeevani-id",
+  "version": "1.0.0",
+  "description": "Sanjeevani-ID: National DPI Zero-OTP Unconscious ER Triage & Remote Family Consent Bridge",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "tsx watch src/server.ts",
+    "seed": "tsx src/data/seedData.ts"
+  },
+  "keywords": [
+    "emergency-room",
+    "triage",
+    "dpi",
+    "healthcare",
+    "india",
+    "hackathon",
+    "gemini-ai",
+    "socket-io"
+  ],
+  "author": "Sanjeevani-ID Team",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^9.11.4",
+    "qrcode": "^1.5.4",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.5",
+    "@types/qrcode": "^1.5.6",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanjeevani-ID • National Zero-OTP ER Emergency Triage DPI</title>
+  <meta name="description" content="National Digital Public Infrastructure for Unconscious ER Patient Triage & Remote Family Consent/Insurance Bridge. Built for Indian Healthcare.">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="navbar">
+    <a href="/" class="brand-badge">
+      <div class="brand-icon">✚</div>
+      <div>
+        <div class="brand-title">SANJEEVANI-ID</div>
+        <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 600;">NATIONAL EMERGENCY TRIAGE DPI</div>
+      </div>
+      <span class="brand-tag">MoHFW • NHA Prototype</span>
+    </a>
+
+    <div class="nav-links">
+      <div id="network-status-badge" class="badge badge-green">
+        <span class="pulse-dot green"></span> GATEWAY ACTIVE
+      </div>
+      <a href="/er-dashboard.html" class="nav-btn accent-red">
+        <span>🚨</span> ER DOCTOR HUD
+      </a>
+      <a href="/patient.html" class="nav-btn">
+        <span>📱</span> PATIENT PASS
+      </a>
+      <a href="/family.html" class="nav-btn">
+        <span>👨‍👩‍👧</span> FAMILY GUARDIAN
+      </a>
+      <button class="sound-toggle-btn sound-on" id="sound-btn" onclick="toggleSound()">
+        <span id="sound-icon">🔊</span> <span id="sound-label">SOUND ON</span>
+      </button>
+      <button class="nav-btn" onclick="resetDemoState()" title="Reset all patient locks for a fresh demo">
+        <span>🔄</span> RESET DEMO
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="container">
+    
+    <div style="text-align: center; margin: 40px auto 50px auto; max-width: 900px;">
+      <div class="badge badge-red" style="margin-bottom: 16px;">
+        <span class="pulse-dot"></span> SOLVING THE GOLDEN HOUR TRAUMA CRISIS IN INDIA
+      </div>
+      <h1 style="font-size: 3.2rem; line-height: 1.15; margin-bottom: 20px; font-weight: 800;">
+        Zero-OTP Unconscious ER Triage &amp; Remote Family Consent Bridge
+      </h1>
+      <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 32px;">
+        When an accident victim arrives unconscious at an Indian Emergency Room, doctors lose the critical first hour because the phone is locked, DigiLocker requires SMS OTPs, and private hospitals delay ICU admission without family consent or cash deposits. 
+        <strong style="color: white;">Sanjeevani-ID bridges this life-or-death gap in 0 seconds.</strong>
+      </p>
+
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="/er-dashboard.html" class="btn btn-danger" style="font-size: 1.05rem; padding: 14px 28px;">
+          <span>🚨</span> Launch ER Doctor Command Center
+        </a>
+        <a href="/patient.html" class="btn btn-primary" style="font-size: 1.05rem; padding: 14px 28px;">
+          <span>📱</span> View Patient Emergency Pass &amp; Wallpaper
+        </a>
+        <a href="/family.html" class="btn btn-outline" style="font-size: 1.05rem; padding: 14px 28px;">
+          <span>👨‍👩‍👧</span> Open Remote Family Guardian
+        </a>
+      </div>
+    </div>
+
+    <!-- Live 3-Device Demonstration Architecture -->
+    <section style="margin-bottom: 60px;">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;">
+        <div>
+          <h2 style="font-size: 1.7rem;">Live Table-Top Hackathon Demo Flow</h2>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">Test on this single laptop across multiple browser tabs, or open links on phones via local Wi-Fi / tunnel!</p>
+        </div>
+        <span class="badge badge-cyan">⚡ 100% FREE TIER • ZERO EXTERNAL HARDWARE</span>
+      </div>
+
+      <div class="grid-cols-3">
+        <!-- Step 1: Patient Pass -->
+        <div class="glass-panel" style="padding: 24px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <span class="badge badge-cyan">STEP 1 • ON MOBILE PHONE 1</span>
+              <span style="font-size: 1.5rem;">📱</span>
+            </div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 10px;">Patient Lock-Screen Pass</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; margin-bottom: 16px;">
+              Victim carries a QR pass on their lock-screen wallpaper, helmet sticker, or wallet card. Also simulated via <strong>Vehicle Number Plate</strong> (PB-10-AB-1234) or <strong>Facial Biometrics</strong>.
+            </p>
+            <div style="background: rgba(0,0,0,0.3); border-radius: var(--radius-sm); padding: 12px; margin-bottom: 16px;">
+              <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 4px;">TEST PROFILES PRELOADED:</div>
+              <div style="font-size: 0.85rem; font-weight: 600; color: #FCA5A5;">• Rohan Verma (O-, LAD Stent, Penicillin Anaphylaxis)</div>
+              <div style="font-size: 0.85rem; font-weight: 600; color: #93C5FD;">• Priya Nair (B+, Brittle Asthma, T1D, Latex Allergy)</div>
+            </div>
+          </div>
+          <a href="/patient.html" class="btn btn-outline" style="width: 100%;">Open Patient Pass ➔</a>
+        </div>
+
+        <!-- Step 2: ER Doctor HUD -->
+        <div class="glass-panel" style="padding: 24px; display: flex; flex-direction: column; justify-content: space-between; border-color: rgba(239, 68, 68, 0.35);">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <span class="badge badge-red">STEP 2 • ON LAPTOP (ER DESK)</span>
+              <span style="font-size: 1.5rem;">🏥</span>
+            </div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 10px;">ER Doctor HUD &amp; AI Triage</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; margin-bottom: 16px;">
+              Doctor scans QR or enters Vehicle Plate. Unlocks <strong>Tier 1 in 0s</strong> (Blood Group, Fatal Allergies, AI Voice Brief). Deep surgical records &amp; insurance stay blurred pending family release.
+            </p>
+            <div style="background: rgba(239, 68, 68, 0.1); border-radius: var(--radius-sm); padding: 12px; margin-bottom: 16px; border: 1px solid rgba(239, 68, 68, 0.2);">
+              <div style="font-size: 0.75rem; color: #FCA5A5; font-weight: 700;">BREAK-GLASS SECURITY:</div>
+              <div style="font-size: 0.82rem; color: #CBD5E1;">Instantly triggers high-urgency WebSocket push &amp; siren to Family Guardian 500 km away.</div>
+            </div>
+          </div>
+          <a href="/er-dashboard.html" class="btn btn-danger" style="width: 100%;">Open ER Doctor HUD ➔</a>
+        </div>
+
+        <!-- Step 3: Remote Family Guardian -->
+        <div class="glass-panel" style="padding: 24px; display: flex; flex-direction: column; justify-content: space-between; border-color: rgba(16, 185, 129, 0.35);">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <span class="badge badge-green">STEP 3 • ON MOBILE PHONE 2</span>
+              <span style="font-size: 1.5rem;">👨‍👩‍👧</span>
+            </div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 10px;">Remote Family Approval</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; margin-bottom: 16px;">
+              Family phone erupts with emergency siren &amp; vibration. Shows GPS-verified hospital stamp. <strong>1-Tap Slide / Signature</strong> releases <strong>PM-RAHAT ₹1.5L token</strong> &amp; unlocks Tier 2 on Doctor's screen!
+            </p>
+            <div style="background: rgba(16, 185, 129, 0.1); border-radius: var(--radius-sm); padding: 12px; margin-bottom: 16px; border: 1px solid rgba(16, 185, 129, 0.2);">
+              <div style="font-size: 0.75rem; color: #86EFAC; font-weight: 700;">FINANCIAL CLEARANCE:</div>
+              <div style="font-size: 0.82rem; color: #CBD5E1;">Eliminates "deposit cash before ICU" delay by pushing government-backed cashless guarantee.</div>
+            </div>
+          </div>
+          <a href="/family.html" class="btn btn-success" style="width: 100%;">Open Family Guardian ➔</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Innovation Matrix (Apple Medical ID vs DigiLocker vs Sanjeevani-ID) -->
+    <section class="glass-panel" style="padding: 36px; margin-bottom: 60px;">
+      <div style="text-align: center; margin-bottom: 32px;">
+        <span class="badge badge-amber" style="margin-bottom: 8px;">COMPETITIVE ANALYSIS</span>
+        <h2 style="font-size: 2rem;">Why Existing Solutions Fail In Indian Emergencies</h2>
+        <p style="color: var(--text-secondary); max-width: 700px; margin: 8px auto 0 auto; font-size: 0.95rem;">
+          How Sanjeevani-ID outclasses big-tech operating systems and government portals during the critical Golden Hour:
+        </p>
+      </div>
+
+      <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.92rem;">
+          <thead>
+            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.15); background: rgba(255,255,255,0.03);">
+              <th style="padding: 16px 20px; font-weight: 700; color: white;">Critical Trauma Scenario</th>
+              <th style="padding: 16px 20px; font-weight: 700; color: #94A3B8;">Apple / Android Medical ID</th>
+              <th style="padding: 16px 20px; font-weight: 700; color: #94A3B8;">DigiLocker / ABHA PHR</th>
+              <th style="padding: 16px 20px; font-weight: 800; color: var(--color-cyan); background: rgba(6, 182, 212, 0.08);">SANJEEVANI-ID (OUR SOLUTION)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--border-subtle);">
+              <td style="padding: 16px 20px; font-weight: 600;">Shattered Phone Screen in Highway Crash</td>
+              <td style="padding: 16px 20px; color: #F87171;">❌ 100% Inaccessible (Dead phone = Dead data)</td>
+              <td style="padding: 16px 20px; color: #F87171;">❌ Cannot receive login OTP on destroyed screen</td>
+              <td style="padding: 16px 20px; color: #34D399; font-weight: 700; background: rgba(6, 182, 212, 0.04);">✅ Device-Independent: Vehicle Plate / ₹5 Helmet QR / Biometric</td>
+            </tr>
+
+            <tr style="border-bottom: 1px solid var(--border-subtle);">
+              <td style="padding: 16px 20px; font-weight: 600;">Unconscious Patient OTP Deadlock</td>
+              <td style="padding: 16px 20px; color: #94A3B8;">N/A (Static basic notes only)</td>
+              <td style="padding: 16px 20px; color: #F87171;">❌ Complete deadlock: Requires Aadhaar OTP sent to locked victim phone</td>
+              <td style="padding: 16px 20px; color: #34D399; font-weight: 700; background: rgba(6, 182, 212, 0.04);">✅ Zero-OTP Break-Glass: Instant emergency triage in 0.0 seconds</td>
+            </tr>
+
+            <tr style="border-bottom: 1px solid var(--border-subtle);">
+              <td style="padding: 16px 20px; font-weight: 600;">Clinical Hospital Report Veracity</td>
+              <td style="padding: 16px 20px; color: #F87171;">❌ Unverified user-typed text (Doctors cannot legally rely on it)</td>
+              <td style="padding: 16px 20px; color: #FBBF24;">⚠️ Fragmented unstandardized PDFs without emergency summary</td>
+              <td style="padding: 16px 20px; color: #34D399; font-weight: 700; background: rgba(6, 182, 212, 0.04);">✅ Golden-Master Hospital ECGs, Stent Reports &amp; AI Drug Contraindication</td>
+            </tr>
+
+            <tr style="border-bottom: 1px solid var(--border-subtle);">
+              <td style="padding: 16px 20px; font-weight: 600;">Private Hospital ICU Admission Barrier</td>
+              <td style="padding: 16px 20px; color: #F87171;">❌ Zero financial pre-clearance; private ICU delayed for cash deposit</td>
+              <td style="padding: 16px 20px; color: #F87171;">❌ No cashless pre-auth or emergency funding tokens</td>
+              <td style="padding: 16px 20px; color: #34D399; font-weight: 700; background: rgba(6, 182, 212, 0.04);">✅ Instant PM-RAHAT ₹1.5L Cashless Claim Token + Star Health Pre-Auth</td>
+            </tr>
+
+            <tr style="border-bottom: 1px solid var(--border-subtle);">
+              <td style="padding: 16px 20px; font-weight: 600;">Remote Family Legal Consent (500 km away)</td>
+              <td style="padding: 16px 20px; color: #F87171;">❌ None (Family must physically travel to sign surgery paperwork)</td>
+              <td style="padding: 16px 20px; color: #F87171;">❌ No remote high-risk surgery digital consent mechanism</td>
+              <td style="padding: 16px 20px; color: #34D399; font-weight: 700; background: rgba(6, 182, 212, 0.04);">✅ Real-time WebSocket siren alert + 1-Tap Cryptographic Legal Signature</td>
+            </tr>
+
+            <tr>
+              <td style="padding: 16px 20px; font-weight: 600;">Privacy Against Lock-Screen Snooping / Thieves</td>
+              <td style="padding: 16px 20px; color: #F87171;">❌ Major privacy leak: anyone can read your emergency contacts &amp; address</td>
+              <td style="padding: 16px 20px; color: #94A3B8;">Guarded by password, but inaccessible in trauma</td>
+              <td style="padding: 16px 20px; color: #34D399; font-weight: 700; background: rgba(6, 182, 212, 0.04);">✅ 2-Tier Architecture: Zero contact leaks on pass; GPS scanner audit logged</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Architecture & Free Tech Stack Highlights -->
+    <section class="grid-cols-3" style="margin-bottom: 60px;">
+      <div class="glass-panel" style="padding: 24px;">
+        <div style="font-size: 1.5rem; margin-bottom: 12px;">⚡</div>
+        <h3 style="font-size: 1.15rem; margin-bottom: 8px;">100% Free Stack Architecture</h3>
+        <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.5;">
+          Runs completely on free tiers with zero credit card required: Node.js, Express, Socket.io, embedded zero-config JSON database, and Google AI Studio Gemini API free tier.
+        </p>
+      </div>
+
+      <div class="glass-panel" style="padding: 24px;">
+        <div style="font-size: 1.5rem; margin-bottom: 12px;">🩺</div>
+        <h3 style="font-size: 1.15rem; margin-bottom: 8px;">AI Clinical Triage Engine</h3>
+        <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.5;">
+          Synthesizes complex history into a 10-second trauma audio brief. Runs real-time drug contraindication checking (e.g. fatal beta-lactams vs blood-thinner hemorrhage risks).
+        </p>
+      </div>
+
+      <div class="glass-panel" style="padding: 24px;">
+        <div style="font-size: 1.5rem; margin-bottom: 12px;">🛡️</div>
+        <h3 style="font-size: 1.15rem; margin-bottom: 8px;">Good Samaritan Compliance</h3>
+        <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.5;">
+          Includes a 60-second fail-safe countdown timer that automatically unlocks Tier 2 under National Medical Commission Good Samaritan guidelines if family is unreachable.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer style="text-align: center; padding: 30px; border-top: 1px solid var(--border-subtle); color: var(--text-muted); font-size: 0.85rem;">
+    Sanjeevani-ID • Built for National Hackathons • 100% Free Services • Open Emergency Standard
+  </footer>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/audio.js"></script>
+  <script src="/js/socket-client.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initSocketConnection();
+    });
+
+    function toggleSound() {
+      const enabled = SoundSystem.toggle();
+      const btn = document.getElementById('sound-btn');
+      const icon = document.getElementById('sound-icon');
+      const label = document.getElementById('sound-label');
+      if (enabled) {
+        btn.classList.add('sound-on');
+        icon.innerText = '🔊';
+        label.innerText = 'SOUND ON';
+        SoundSystem.playClick();
+      } else {
+        btn.classList.remove('sound-on');
+        icon.innerText = '🔇';
+        label.innerText = 'MUTED';
+      }
+    }
+
+    async function resetDemoState() {
+      try {
+        const res = await fetch('/api/reset', { method: 'POST' });
+        const data = await res.json();
+        showToast('🔄 Demo state reset to initial locked state!', 'success');
+      } catch (err) {
+        showToast('Error resetting demo: ' + err.message, 'danger');
+      }
+    }
+  </script>
+</body>
+</html>
